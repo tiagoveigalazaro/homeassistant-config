@@ -28,4 +28,4 @@ jobs:
         pip3 install homeassistant
     - name: Validate configuration
       run: |
-        - hass --script check_config -c . -f
+        hass --script check_config -c . -f
