@@ -135,4 +135,16 @@ dmypy.json
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+*.conf
+*.db*
+*.uuid
 
+# Logs
+logs
+*.log
+
+# Operating System Trash Files
+.DS_Store
+
+# IDE
+.vscode
