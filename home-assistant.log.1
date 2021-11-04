@@ -1,0 +1,33 @@
+2021-11-03 09:40:56 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2021-11-03 09:40:56 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=1 from 2021-11-03 09:13:17.898061)
+2021-11-03 10:03:15 ERROR (MainThread) [homeassistant.config_entries] Error setting up entry shellyplug-s-6F3486 for shelly
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/config_entries.py", line 304, in async_setup
+    result = await component.async_setup_entry(hass, self)  # type: ignore
+  File "/usr/src/homeassistant/homeassistant/components/shelly/__init__.py", line 106, in async_setup_entry
+    return await async_setup_block_entry(hass, entry)
+  File "/usr/src/homeassistant/homeassistant/components/shelly/__init__.py", line 162, in async_setup_block_entry
+    await async_block_device_setup(hass, entry, device)
+  File "/usr/src/homeassistant/homeassistant/components/shelly/__init__.py", line 184, in async_block_device_setup
+    ] = BlockDeviceWrapper(hass, entry, device)
+  File "/usr/src/homeassistant/homeassistant/components/shelly/__init__.py", line 239, in __init__
+    UPDATE_PERIOD_MULTIPLIER * device.settings["coiot"]["update_period"]
+  File "/usr/local/lib/python3.9/site-packages/aioshelly/block_device.py", line 264, in settings
+    raise AuthRequired
+aioshelly.exceptions.AuthRequired
+2021-11-03 10:59:20 ERROR (SyncWorker_1) [homeassistant.components.co2signal] Unexpected exception
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/co2signal/__init__.py", line 119, in get_data
+    data = CO2Signal.get_latest(
+  File "/usr/local/lib/python3.9/site-packages/CO2Signal/co2signal.py", line 34, in get_latest
+    latest_data = (requests
+  File "/usr/local/lib/python3.9/site-packages/requests/models.py", line 910, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/simplejson/__init__.py", line 525, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/lib/python3.9/site-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/usr/local/lib/python3.9/site-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+simplejson.errors.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2021-11-03 10:59:20 ERROR (MainThread) [homeassistant.components.co2signal] Error fetching co2signal data: 
