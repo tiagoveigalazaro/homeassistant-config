@@ -10,3 +10,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+homeassistant:
+  # Load packages
+  packages: !include_dir_named integrations
